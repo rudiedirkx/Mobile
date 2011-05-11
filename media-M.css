@@ -1,0 +1,18 @@
+
+div > p {
+	background-color: blue;
+}
+
+body {
+	background: url(mqbg.png) no-repeat 0 0;
+}
+
+#css-M {
+	background-color: lightblue;
+	display: block;
+	width: 460px;
+}
+#nocss,
+#css-L {
+	display:none;
+}
