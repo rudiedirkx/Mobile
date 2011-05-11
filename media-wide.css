@@ -1,0 +1,5 @@
+
+div > p { background-color:green; }
+
+#fordesktop { background-color:#afa; display:block; }
+#nocss, #formobile { display:none; }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MQ support?</title>
+	<style>
+	div > p { background-color:#aaa; color:#fff; padding:10px; border:solid 10px #888; }
+	.handheld { display:none; }
+	@media (orientation:portrait) {
+		div > p { border-color:green; }
+	}
+	</style>
+	<link rel="stylesheet" media="only handheld, all and (orientation:portrait) and (max-width:800px)" href="media-for-ie.css" />
+	<link rel="stylesheet" media="only (min-width:1000px)" href="media-wide.css" />
+	<link rel="stylesheet" media="only (max-width:400px)" href="media-small.css" />
+	<link rel="stylesheet" media="only handheld" href="media-handheld.css" />
+	<script src="mqsupport.js"></script>
+<head>
+
+<body>
+
+	<div><p>Resize the browser and see what happens...</p></div>
+	<p>Potential</p>
+	<ul>
+		<li onclick="alert(parseMediaAttribute(this.innerHTML));">handheld, all and (orientation:portrait) and (max-device-width:800px)</li>
+		<li onclick="alert(parseMediaAttribute(this.innerHTML));">handheld</li>
+		<li onclick="alert(parseMediaAttribute(this.innerHTML));">all</li>
+		<li onclick="alert(parseMediaAttribute(this.innerHTML));">(min-width:1000px)</li>
+		<li onclick="alert(parseMediaAttribute(this.innerHTML));">(max-width:400px)</li>
+	</ul>
+
+	<p class="handheld" id="handheld">THIS DEVICE IS 'HANDHELD'</p>
+
+	<p id="jss">THIS DEVICE DOESN'T DO JAVASCRIPT</p>
+
+	<p style="display:none;" id="jss2">THIS DEVICE DOES JAVASCRIPT</p>
+
+	<script>(function(){ document.getElementById('jss').style.display = 'none';})();</script>
+	<script>(function(){ document.getElementById('jss2').style.display = 'block';})();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width" />
+<title>mq tests</title>
+<script src="js/css3-mediaqueries.js"></script>
+<style>
+* { margin:0; padding:0; }
+body { padding-bottom:20px; background:url(mqbg.png) 0 0; }
+br, hr { clear:both; display:block; }
+hr { margin:20px; position:relative; top:20px; visibility:hidden; }
+.blocks { width:281px; }
+.blocks div.b { float:left; width:110px; min-height:40px; margin:20px 0 0 20px; background:#faa; opacity:0.4; }
+
+.mqwhat { display:block; }
+@media (min-width:0px) {
+	.mqwhat { display:none; }
+}
+
+#fw, #fh, #fw2, #fh2, #mqwhat { background-color:lightblue; }
+
+@media all {
+	#de { background:#afa; opacity:1; }
+}
+@media screen {
+	#da { background:#afa; opacity:1; }
+}
+@media handheld {
+	#db { background:#afa; opacity:1; }
+}
+@media print {
+	#dc { background:#afa; opacity:1; }
+}
+@media projection {
+	#dd { background:#afa; opacity:1; }
+}
+
+@media (orientation:portrait) {
+	#ca { background:#afa; opacity:1; }
+}
+@media (orientation:landscape) {
+	#cb { background:#afa; opacity:1; }
+}
+
+@media (min-device-width:300px) {
+	#aa { background:#afa; opacity:1; }
+}
+@media (min-device-width:400px) {
+	#ab { background:#afa; opacity:1; }
+}
+@media (min-device-width:500px) {
+	#ac { background:#afa; opacity:1; }
+}
+@media (min-device-width:600px) {
+	#ad { background:#afa; opacity:1; }
+}
+@media (min-device-width:700px) {
+	#ae { background:#afa; opacity:1; }
+}
+@media (min-device-width:800px) {
+	#af { background:#afa; opacity:1; }
+}
+@media (min-device-width:900px) {
+	#ag { background:#afa; opacity:1; }
+}
+@media (min-device-width:1000px) {
+	#ah { background:#afa; opacity:1; }
+}
+
+@media (min-width:300px) {
+	#ba { background:#afa; opacity:1; }
+}
+@media (min-width:400px) {
+	#bb { background:#afa; opacity:1; }
+}
+@media (min-width:500px) {
+	#bc { background:#afa; opacity:1; }
+}
+@media (min-width:600px) {
+	#bd { background:#afa; opacity:1; }
+}
+@media (min-width:700px) {
+	#be { background:#afa; opacity:1; }
+}
+@media (min-width:800px) {
+	#bf { background:#afa; opacity:1; }
+}
+@media (min-width:900px) {
+	#bg { background:#afa; opacity:1; }
+}
+@media (min-width:1000px) {
+	#bh { background:#afa; opacity:1; }
+}
+</style>
+<link rel="stylesheet" href="mq-all.css" media="all" />
+<link rel="stylesheet" href="mq-screen.css" media="screen" />
+<link rel="stylesheet" href="mq-handheld.css" media="handheld" />
+<link rel="stylesheet" href="mq-print.css" media="print" />
+<link rel="stylesheet" href="mq-projection.css" media="projection" />
+</head>
+
+<body>
+
+<div class="blocks">
+
+	<div class="mqwhat">
+		<div class="b" id="mqwhat"><b>I don't understand<br>@media queries :(</b></div>
+		<hr />
+	</div>
+
+	<div class="b" id="de">@media medium:<br />all</div>
+	<div class="b" id="da">@media medium:<br />screen</div>
+	<div class="b" id="db">@media medium:<br />handheld</div>
+	<div class="b" id="dc">@media medium:<br />print</div>
+	<div class="b" id="dd">@media medium:<br />projection</div>
+
+	<hr />
+
+	<div class="b" id="ee">link medium:<br />all</div>
+	<div class="b" id="ea">link medium:<br />screen</div>
+	<div class="b" id="eb">link medium:<br />handheld</div>
+	<div class="b" id="ec">link medium:<br />print</div>
+	<div class="b" id="ed">link medium:<br />projection</div>
+
+	<hr />
+
+	<div class="b" id="ca">orientation: portrait</div>
+	<div class="b" id="cb">orientation: landscape</div>
+
+	<hr />
+
+	<div class="b" id="aa">device &gt;= 300</div>
+	<div class="b" id="ab">device &gt;= 400</div>
+	<div class="b" id="ac">device &gt;= 500</div>
+	<div class="b" id="ad">device &gt;= 600</div>
+	<div class="b" id="ae">device &gt;= 700</div>
+	<div class="b" id="af">device &gt;= 800</div>
+	<div class="b" id="ag">device &gt;= 900</div>
+	<div class="b" id="ah">device &gt;= 1000</div>
+
+	<hr />
+
+	<div class="b" id="ba">viewport &gt;= 300</div>
+	<div class="b" id="bb">viewport &gt;= 400</div>
+	<div class="b" id="bc">viewport &gt;= 500</div>
+	<div class="b" id="bd">viewport &gt;= 600</div>
+	<div class="b" id="be">viewport &gt;= 700</div>
+	<div class="b" id="bf">viewport &gt;= 800</div>
+	<div class="b" id="bg">viewport &gt;= 900</div>
+	<div class="b" id="bh">viewport &gt;= 1000</div>
+
+	<hr />
+
+	<div class="b" id="fw">width = <span>?</span></div>
+	<div class="b" id="fh">height = <span>?</span></div>
+
+	<div class="b" id="fw2">device width = <span>?</span></div>
+	<div class="b" id="fh2">device height = <span>?</span></div>
+
+</div>
+
+<br>
+
+<script>
+function printSize() {
+	var w = window.innerWidth || document.documentElement.clientWidth;
+	document.getElementById('fw').getElementsByTagName('span')[0].innerHTML = w;
+	var h = window.innerHeight || document.documentElement.clientHeight;
+	document.getElementById('fh').getElementsByTagName('span')[0].innerHTML = h;
+
+	document.getElementById('fw2').getElementsByTagName('span')[0].innerHTML = screen.width;
+	document.getElementById('fh2').getElementsByTagName('span')[0].innerHTML = screen.height;
+}
+printSize();
+setInterval(printSize, 500);
+</script>
+
+</body>
+
+</html>
