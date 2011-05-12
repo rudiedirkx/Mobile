@@ -14,6 +14,18 @@ p {
 	margin: 30px 0;
 }
 
+#orientation {
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+}
+html.landscape #orientation:after {
+	content: 'LANDSCAPE';
+}
+html.portrait #orientation:after {
+	content: 'PORTRAIT';
+}
+
 p[id] {
 	padding: 3px 6px;
 	margin-left: auto;
